@@ -20,7 +20,7 @@ public class Cylinder extends Circle {
    public Cylinder() {
       super();  // invoke superclass' constructor Circle()
       this.height = 1.0;
-      System.out.println("Constructed a Cylinder with Cylinder()");  // for debugging
+      //System.out.println("Constructed a Cylinder with Cylinder()");  // for debugging
    }
    public Cylinder(double height) {
       super();  // invoke superclass' constructor Circle()

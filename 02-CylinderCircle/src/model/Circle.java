@@ -18,7 +18,7 @@ public class Circle {
    public Circle() {
       this.radius = 1.0;
       this.color = "red";
-      System.out.println("Construced a Circle with Circle()");  // for debugging
+      //System.out.println("Construced a Circle with Circle()");  // for debugging
    }
    public Circle(double radius) {
       this.radius = radius;
