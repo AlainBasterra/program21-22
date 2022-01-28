@@ -45,9 +45,7 @@ public class Partida {
         this.txartelak = txartelak;
     }
 
-    public String txartelaJarri(f:Futbolista){
-        return "txartelaJarri";
-    }
-    
-    
+    public void txartelaJarri(Futbolista f){
+        txartelak.add(f);
+    }    
 }

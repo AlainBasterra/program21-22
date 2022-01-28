@@ -13,6 +13,11 @@ public class Entrenador extends IntegranteSeleccion {
 
     private String idFederacion;
 
+    public Entrenador(){
+        super();
+    }
+    
+    
     public Entrenador(String idFederacion, int id, String nombre, String apellidos, int edad) {
         super(id, nombre, apellidos, edad);
         this.idFederacion = idFederacion;

@@ -16,6 +16,11 @@ public class IntegranteSeleccion { //id eta nombre protected dira eta apellidos 
     private String apellidos;
     private int edad;
 
+    
+    public IntegranteSeleccion(){
+        
+    }
+    
     public IntegranteSeleccion(int id, String nombre, String apellidos, int edad) {
         this.id = id;
         this.nombre = nombre;

@@ -17,7 +17,7 @@ import model.Masajista;
  */
 public class Test {
     public static void main(String[] args) {
-        Futbolista f1 = new Futbolista (536, "Gorka", "Iraizoz", 37, 1, Demarkazioa.POR);
+        Futbolista f1 = new Futbolista (1,Demarkazioa.POR ,536 ,"Iraizoz" ,"Gorka" ,37);
         Entrenador e1 = new Entrenador();
         Masajista m1 = new Masajista();
         f1.entrenar();

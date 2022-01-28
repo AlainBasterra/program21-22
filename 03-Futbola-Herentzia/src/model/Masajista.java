@@ -14,6 +14,10 @@ public class Masajista extends IntegranteSeleccion {
     private String titulacion;
     private int aniosExperiencia;
 
+    public Masajista(){
+        
+    }
+    
     public Masajista(int id, String nombre, String apellidos, int edad) {
         super(id, nombre, apellidos, edad);
     }

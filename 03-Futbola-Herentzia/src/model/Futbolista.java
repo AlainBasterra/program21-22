@@ -46,4 +46,10 @@ public class Futbolista extends IntegranteSeleccion {
     public String jugarPartido() {
         return "jugarPartido";
     }
+
+    @Override
+    public String toString() {
+        return "Futbolista{" + "Id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos +", edad=" + edad +", dorsal=" + dorsal +", demarcacion=" + demarcacion + '}';
+    }
+    
 }
