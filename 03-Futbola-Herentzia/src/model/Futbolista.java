@@ -49,7 +49,7 @@ public class Futbolista extends IntegranteSeleccion {
 
     @Override
     public String toString() {
-        return "Futbolista{" + "Id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos +", edad=" + edad +", dorsal=" + dorsal +", demarcacion=" + demarcacion + '}';
+        return "Futbolista{" + "Id=" + id + ", nombre=" + nombre + ", apellidos=" + this.getApellidos() +", edad=" + this.getEdad() +", dorsal=" + dorsal +", demarcacion=" + demarcacion + '}';
     }
     
 }

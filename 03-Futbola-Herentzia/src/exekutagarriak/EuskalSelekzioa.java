@@ -6,6 +6,7 @@
 package exekutagarriak;
 
 import enumak.Demarkazioa;
+import model.Entrenador;
 import model.Futbolista;
 
 
@@ -27,8 +28,11 @@ public class EuskalSelekzioa {
      */
     public static void main(String[] args) {
         
-        futbolariBat();
-        bestePartaideBatzukSortu();
+        int azkenIda = 1;
+        
+        futbolariBat(azkenIda);
+        azkenIda ++;
+        bestePartaideBatzukSortu(azkenIda);
         selekzioOsoaSortu();
         int ezabatzekoIda = 4;
         if (partaideaEzabatu(ezabatzekoIda)){
@@ -45,22 +49,26 @@ public class EuskalSelekzioa {
      *  partaide bat sortzen den bakoitzean handituko dena. 
      *  Amaitzeko, Villalibre entrenatzen hasiko da.
     */
-    public static void futbolariBat(){
-        Futbolista f1 = new Futbolista (11, Demarkazioa.DEL, 1, "Asier", "Villalibre", 23);
+    public static void futbolariBat(int id){
+        Futbolista f1 = new Futbolista (11, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23);        
+        System.out.println(f1);
+        f1.setId(id);
+        System.out.println(f1);
         
     
     }
     
     /** Metodo honek hiru objektu berri sortuko ditu. Pertsona hauei dagokienak: 
-     * - Javier Clemente
-     * - Iñaki Sertxiberrieta
-     * - Ander Etxeburu
+     * - Javier Clemente Entrenatzailea
+     * - Iñaki Sertxiberrieta Fisioterapeuta
+     * - Ander Etxeburu medikua
      * Zein klaseko objektua izan behar du bakoitzak?
      * 
      * Objektu bakoitza sortu ondoren, bere datuak inprimatu eta kontzentratu eta bidaiatuko dute
      */
-    public static void bestePartaideBatzukSortu(){
-        
+    public static void bestePartaideBatzukSortu(int id){
+        Entrenador e1 = new Entrenador ("RFEF", id, "Javier", "Clemente", 71);
+        System.out.println(e1);
     }
     
     

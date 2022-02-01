@@ -39,4 +39,10 @@ public class Entrenador extends IntegranteSeleccion {
         return "dirigirPartido";
     }
 
+    @Override
+    public String toString() {
+        return "Entrenador{" + "idFederacion=" + idFederacion + '}';
+    }
+
+    
 }
