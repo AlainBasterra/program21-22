@@ -41,7 +41,7 @@ public class Entrenador extends IntegranteSeleccion {
 
     @Override
     public String toString() {
-        return "Entrenador{" + "idFederacion=" + idFederacion + '}';
+        return "Entrenador{" + "idFederacion=" + idFederacion + ", Id=" + id + ", nombre= " + nombre + ", apellidos=" + this.getApellidos() + ", edad=" + this.getEdad() +  '}';
     }
 
     

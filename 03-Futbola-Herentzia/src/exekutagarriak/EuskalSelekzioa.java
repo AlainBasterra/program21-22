@@ -6,8 +6,11 @@
 package exekutagarriak;
 
 import enumak.Demarkazioa;
+import java.util.ArrayList;
 import model.Entrenador;
 import model.Futbolista;
+import model.IntegranteSeleccion;
+import model.Masajista;
 
 
 
@@ -33,7 +36,8 @@ public class EuskalSelekzioa {
         futbolariBat(azkenIda);
         azkenIda ++;
         bestePartaideBatzukSortu(azkenIda);
-        selekzioOsoaSortu();
+        azkenIda += 3;
+        selekzioOsoaSortu(azkenIda);
         int ezabatzekoIda = 4;
         if (partaideaEzabatu(ezabatzekoIda)){
             System.out.println(ezabatzekoIda + " id-a duen partaidea ezabatu da.");
@@ -69,6 +73,12 @@ public class EuskalSelekzioa {
     public static void bestePartaideBatzukSortu(int id){
         Entrenador e1 = new Entrenador ("RFEF", id, "Javier", "Clemente", 71);
         System.out.println(e1);
+        e1.viajar();
+        e1.concentrarse();
+        Masajista m1 = new Masajista ("titulacion", 42, 0, "Iñaki", "Sertxiberrieta", 69);
+        m1.darMasaje();
+        Masajista m2 = new Masajista ("titulacion", 42, 0, "Ander", "Etxeburu", 60);
+        m2.darMasaje();        
     }
     
     
@@ -76,9 +86,31 @@ public class EuskalSelekzioa {
      * ArrayList estatiko baten.
      *  
      */
-    public static void selekzioOsoaSortu(){
+    public static void selekzioOsoaSortu(int id){
+        ArrayList<IntegranteSeleccion> selekzioa = new ArrayList<IntegranteSeleccion>();
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
+        selekzioa.add(new Futbolista (id++, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23));
         
-    
     }
     
     /** ArrayListetik objektu bat ezabatzen du. Aurkitzen ez badu false itzuliko du
