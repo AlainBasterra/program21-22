@@ -18,7 +18,7 @@ public class Entrenador extends IntegranteSeleccion {
     }
     
     
-    public Entrenador(String idFederacion, int id, String nombre, String apellidos, int edad) {
+    public Entrenador(int id, String idFederacion, String nombre, String apellidos, int edad) {
         super(id, nombre, apellidos, edad);
         this.idFederacion = idFederacion;
     }

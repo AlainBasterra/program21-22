@@ -22,7 +22,7 @@ public class Masajista extends IntegranteSeleccion {
         super(id, nombre, apellidos, edad);
     }
 
-    public Masajista(String titulacion, int aniosExperiencia, int id, String nombre, String apellidos, int edad) {
+    public Masajista(int id, int aniosExperiencia, String titulacion, String nombre, String apellidos, int edad) {
         super(id, nombre, apellidos, edad);
         this.titulacion = titulacion;
         this.aniosExperiencia = aniosExperiencia;
