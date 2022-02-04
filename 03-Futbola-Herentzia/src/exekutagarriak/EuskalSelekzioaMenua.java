@@ -16,7 +16,7 @@ import model.Futbolista;
 import model.IntegranteSeleccion;
 
 import java.util.ArrayList;
-import model.Masajista;
+import model.*;
 
 /** Programa honetan Euskal Selekzioaren datuekin egingo dugu lan.
  *  Iturria: https://es.wikipedia.org/wiki/Selecci%C3%B3n_de_f%C3%BAtbol_de_Euskadi#Plantilla

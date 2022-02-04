@@ -18,8 +18,8 @@ import model.*;
  */
 public class EuskalSelekzioa {
 
-    public static int azkenId = 0;
-    public static ArrayList<IntegranteSeleccion> selekzioa;
+    public static int azkenId = 1;
+    public static ArrayList<IntegranteSeleccion> selekzioa = new ArrayList();
 
     /**
      * Programa honek metodo desberdinei deituko die banan banan. Beharbada ez
@@ -41,18 +41,16 @@ public class EuskalSelekzioa {
      * Metodo honek "Asier Villalibre"ri dagokion Futbolista objektua sortu eta
      * formatu honetan inprimatzen du: "Futbolista{id=1, nombre=Asier,
      * apellidos=Villalibre, edad=23, dorsal=11, demarcacion=DEL}" Hori lortzeko
-     * Futbolista klasean toString() metodoa birdefinitu beharko duzu. Gainera,
-     * Web orrian id-rik ez dagoenez, automatikoki kalkulatzea erabaki dugu.
-     * Horretarako, kontadore bat (Adibidez, azkenIda izeneko klase atributu
-     * bat) erabili dezakezu partaide bat sortzen den bakoitzean handituko dena.
-     * Amaitzeko, Villalibre entrenatzen hasiko da.
+     * Futbolista klasean toString() metodoa birdefinitu beharko duzu.Gainera,
+ Web orrian id-rik ez dagoenez, automatikoki kalkulatzea erabaki dugu. Horretarako, kontadore bat (Adibidez, azkenIda izeneko klase atributu
+ bat) erabili dezakezu partaide bat sortzen den bakoitzean handituko dena.
+ Amaitzeko, Villalibre entrenatzen hasiko da.
+     * @param id
      */
     public static void futbolariBat(int id) {
         Futbolista f1 = new Futbolista(11, Demarkazioa.DEL, 0, "Asier", "Villalibre", 23);
         System.out.println(f1);
-        f1.setId(id);
         System.out.println(f1);
-
     }
 
     /**
@@ -62,7 +60,7 @@ public class EuskalSelekzioa {
      *
      * Objektu bakoitza sortu ondoren, bere datuak inprimatu eta kontzentratu
      * eta bidaiatuko dute
-     */
+2     */
     public static void bestePartaideBatzukSortu(int id) {
         Entrenador e1 = new Entrenador(id, "RFEF", "Javier", "Clemente", 71);
         System.out.println(e1);
@@ -78,6 +76,7 @@ public class EuskalSelekzioa {
      * Selekzio osoaren datuak gorde "selekzioa" deitutako IntegranteSeleccion
      * klaseko ArrayList estatiko baten.
      *
+     * @param id
      */
     public static void selekzioOsoaSortu(int id) {
         selekzioa.add(new Futbolista(id, Demarkazioa.DEL, id++, "Aitor", "Fernandez", 30));
