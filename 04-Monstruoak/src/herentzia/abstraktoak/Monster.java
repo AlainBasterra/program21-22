@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package herentzia.abstraktoak;
-
-import herentzia.*;
 
 /**
  * The superclass Monster defines the expected common behaviors for its subclasses.
  */
-public class Monster {
+public abstract class Monster {
    // private instance variable
    private String name;
 
@@ -20,9 +13,5 @@ public class Monster {
    }
 
    /** Defines a common behavior called attack() for all its subclasses */
-   public String attack() {
-      return "!^_&^$@+%$* I don't know how to attack!";
-      // We have a problem here!
-      // We need to return a String; else, compilation error!
-   }
+   public abstract String attack();
 }

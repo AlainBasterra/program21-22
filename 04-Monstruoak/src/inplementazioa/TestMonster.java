@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package herentzia.abstraktoak;
+package inplementazioa;
+
 
 public class TestMonster {
    public static void main(String[] args) {
       // Program at the specification defined in the superclass/interface.
       // Declare instances of the superclass, substituted by subclasses.
-      Monster m1 = new FireMonster("r2u2");   // upcast
-      Monster m2 = new WaterMonster("u2r2");  // upcast
-      Monster m3 = new StoneMonster("r2r2");  // upcast
+      Monstruosoa m1 = new FireMonster("r2u2");   // upcast
+      Monstruosoa m2 = new WaterMonster("u2r2");  // upcast
+      Monstruosoa m3 = new StoneMonster("r2r2");  // upcast
       
 
       // Invoke the actual implementation

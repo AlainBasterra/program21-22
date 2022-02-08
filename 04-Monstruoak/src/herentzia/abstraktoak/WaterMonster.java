@@ -5,7 +5,6 @@
  */
 package herentzia.abstraktoak;
 
-import herentzia.*;
 
 public class WaterMonster extends Monster {
    /** Constructs a WaterMonster instance with the given name */
