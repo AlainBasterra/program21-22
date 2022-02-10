@@ -26,6 +26,8 @@ public class Erosketa {
         this.guztira = guztira;
     }
 
+
+
     @Override
     public String toString() {
         return "Erosketa{" + "kodea=" + kodea + ", bezeroa=" + bezeroa + ", guztira=" + guztira + '}';
@@ -34,6 +36,9 @@ public class Erosketa {
     @Override
     public String toStringLuzea() {
         return "Erosketa{" + "kodea=" + kodea + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak=" + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + '}';
+    }
+    
+    public guztiraEgiaztatu(){
     }
 
     
