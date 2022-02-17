@@ -20,12 +20,26 @@ public class Erosketa {
     protected ArrayList<Integer> unitateak = new ArrayList();
     protected double guztira;
 
-    public Erosketa(char[] kodea, Bezeroa bezeroa, double guztira) {
-        this.kodea = kodea;
+    public Erosketa(){
+    }
+    
+    
+    public Erosketa(String kodea, Bezeroa bezeroa, double guztira) {
+        this.kodea = kodea.toCharArray();
         this.bezeroa = bezeroa;
         this.guztira = guztira;
     }
 
+    public Erosketa(String kodea, LocalDate data, Bezeroa bezeroa, ArrayList<Produktua> produktuak, ArrayList<Integer> unitateak, double guztira) {
+        this.kodea = kodea.toCharArray();
+        this.data = data;
+        this.bezeroa = bezeroa;
+        this.guztira = guztira;
+        this.unitateak = unitateak;
+        this.produktuak = produktuak;
+    }
+
+    
 
 
     @Override
@@ -33,16 +47,14 @@ public class Erosketa {
         return "Erosketa{" + "kodea=" + kodea + ", bezeroa=" + bezeroa + ", guztira=" + guztira + '}';
     }
 
-    @Override
     public String toStringLuzea() {
         return "Erosketa{" + "kodea=" + kodea + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak=" + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + '}';
     }
     
-    public guztiraEgiaztatu(){
+    public boolean guztiraEgiaztatu(){
+        return false;
+        
     }
-
-    
-
 
     
 }

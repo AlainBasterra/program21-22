@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
-
+package exekutagarriak;
+import model.*;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.LocalTime;
 /**
  *
  * @author basterra.alain
  */
-public interface Bezeroa {
-
-
-    
-    public int getKodea();
-    public String getIzena();
-    public String getHelbidea();
-    public String getEmaila();
-   
-    
+public class test {
+    Erosketa e1 = new Erosketa ("111", LocalTime.now(). );
 }

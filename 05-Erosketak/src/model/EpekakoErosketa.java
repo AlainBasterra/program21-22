@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import model.*;
 
@@ -12,17 +13,21 @@ import model.*;
  *
  * @author basterra.alain
  */
-public class EpekakoErosketa {
+public class EpekakoErosketa extends Erosketa{
 
     private int epeak = 12;
     private boolean ordainketaBukatuta = false;
     private double kuota;
 
-    public EpekakoErosketa(String kodea, String data, Bezeroa eroslea, ArrayList<Produktua> produktuak, ArrayList<Integer> unitateak, double guztira, double kuota) {
-        super {kodea, data, eroslea, produktuak, unitateak, guztira);
+    public EpekakoErosketa(String kodea, LocalDate data, Bezeroa eroslea, ArrayList<Produktua> produktuak, ArrayList<Integer> unitateak, double guztira, double kuota) {
+
+        super(kodea, data, eroslea, produktuak, unitateak, guztira);
         this.kuota = kuota;
-        }
-        
-        
     }
+    
+    public double gainetikOrdainduBeharrekoa (){
+        double diferentzia = (this.epeak * this.kuota)-this.guztira;
+        return diferentzia;         
+    }
+
 }

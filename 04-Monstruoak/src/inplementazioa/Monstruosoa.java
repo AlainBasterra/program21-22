@@ -8,9 +8,6 @@ public interface Monstruosoa {
     
     
     
-    
-    
-    
    public String attack();
 
 }

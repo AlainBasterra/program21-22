@@ -9,6 +9,32 @@ package model;
  *
  * @author basterra.alain
  */
-public class Pertsona {
+public class Pertsona implements Bezeroa{
+    private int kodea;
+    private String izena;
+    private String abizena;
+    private String helbidea;
+    private String emaila;
+
+    
+    @Override
+    public int getKodea(){
+        return kodea;
+    }
+    
+    @Override
+    public String getIzena() {
+        return izena;
+    }
+
+    @Override
+    public String getEmaila() {
+        return emaila;
+    }
+    
+    @Override
+    public String getHelbidea(){
+        return helbidea;
+    }
     
 }

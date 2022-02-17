@@ -17,4 +17,14 @@ public class Produktua {
 
     public Produktua(){
     }
+    
+    public Produktua(String kodea, String izena, double prezioa){
+        this.kodea = kodea.toCharArray();
+        this.izena = izena;
+        this.prezioa = prezioa;
+    }
+    
+    public String getStrKodea(){
+        return new String(kodea);
+    }
 }
