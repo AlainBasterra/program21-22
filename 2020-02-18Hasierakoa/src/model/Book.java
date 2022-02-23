@@ -11,6 +11,7 @@ public class Book {
     private double price;
     private int pages;
 
+    private static int argitaratutakoLiburuak;
     // Constructors
     public Book() {
 
@@ -21,6 +22,8 @@ public class Book {
         this.author = author;
         this.price = price;
         this.pages = pages;
+        
+        
     }
 
     // Getters and Setters
