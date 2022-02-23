@@ -39,16 +39,26 @@ public class ProgramaNagusia {
     }
 
     public static void jaiotzeDataBete() {
-        Scanner sc = new Scanner(System.in);
-        String strPosizioa = sc.next();
-        int posizioa = Integer.parseInt(strPosizioa);
-        System.out.println("Sartu" + idazleak [posizioa - 1].getName() + " idazlearen jaiotze data ");
-        String strJaiotze = sc.next();
-        
-        
-        
-        sc.close();
+            int pos;
+            boolean errorea = false;
+            
+            String jaiotze_data;
+            Scanner in = new Scanner(System.in);
 
+            System.out.println("Zein idazleren jaiotze data nahi duzu bete (Idatzi posizioa)? ");
+            pos = in.nextInt();
+            System.out.println("Sartu " + idazleak[pos-1] + " idazlearen jaiotze data (uuuu-hh-ee): ");
+            jaiotze_data = in.next();
+            try {
+                  idazleak[pos].setBirthday(jaiotze_data);
+            } catch (Exception ª) {
+                  System.out.println("Data okerra. Hurrengo batean sartuko duzu data.");
+                  errorea = true;
+            }
+            
+            if(!errorea){
+                  System.out.println("Jaiotze-data ondo erregistratu da.");
+            }
     }
 
     public static void inprimatu() {

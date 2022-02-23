@@ -7,7 +7,6 @@ public interface Monstruosoa {
     // atributoak egotekotan public eta estatikoak (=klase mailakoak)
     
     
-    
    public String attack();
 
 }

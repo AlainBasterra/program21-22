@@ -32,7 +32,7 @@ public class TestMonster {
 //      System.out.println(m4.attack());  // garbage!!!
       //!^_&^$@+%$* I don't know how to attack!
       
-//      Monster m5 = new FilthyWaterMonster("UwU");
-//      System.out.println(m5.attack());
+      Monster m5 = new FilthyWaterMonster("UwU");
+      System.out.println(m5.attack());
    }
 }
