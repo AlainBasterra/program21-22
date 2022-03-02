@@ -17,7 +17,7 @@ public class Laukizuzena implements Marrazgarria {
     public Laukizuzena(Puntua erpinBat, Puntua kontrakoErpina) {
         this.erpinBat = erpinBat;
         this.kontrakoErpina = kontrakoErpina;
-    }
+    } 
     
     public Laukizuzena(int x1, int y1, int x2, int y2){
         this.erpinBat = new Puntua(x1, y1);

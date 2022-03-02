@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package model;
-
+import java.lang.Math;
 /**
  *
  * @author basterra.alain
@@ -22,19 +22,36 @@ public class Kutxa extends Laukizuzena {
         return altuera;
     }
     
-//    public boolean isHandiagoa(Kutxa besteKutxaBat){
-//        int nireBolumena = (erpinBat.getX() - kontrakoErpina.getX()) * (erpinBat.getY() - kontrakoErpina.getY()) * altuera;
-//        int besteBolumena = (besteKutxaBat.erpinBat.getX() - besteKutxaBat.kontrakoErpina.getX()) * (besteKutxaBat.erpinBat.getY() - kontrakoErpina.getY()) * altuera;
-//        
-//    }
+    public boolean isHandiagoa(Kutxa besteKutxaBat){
+        boolean handiagoa = false;
+        int nireBolumena = Math.abs(getErpinBat().getX() - getKontrakoErpina().getX()) * Math.abs(getErpinBat().getY() - getKontrakoErpina().getY()) * Math.abs(altuera);
+        int besteBolumena = Math.abs(besteKutxaBat.getErpinBat().getX() - besteKutxaBat.getKontrakoErpina().getX()) * Math.abs(besteKutxaBat.getErpinBat().getY() - getKontrakoErpina().getY()) * Math.abs(altuera);
+        if (besteBolumena > nireBolumena){
+            handiagoa = true;
+        }
+        return handiagoa;
+    }
+    
+    public int getBolumena(){
+        int bolumena = Math.abs(this.getErpinBat().getX() - this.getKontrakoErpina().getX()) * Math.abs(this.getErpinBat().getY() - this.getKontrakoErpina().getY()) * Math.abs(this.altuera);
+        return bolumena;
+    }
+    
+    public boolean isInside(Puntua puntua){
+        if (puntua.getX() >= this.getErpinBat().getX() && puntua.getX() <= this.getKontrakoErpinBat().getX()){
+            
+        }
+    }
 
     @Override
     public String toString() {
-        return "Kutxa{" + "altuera=" + altuera + '}';
+        return "(" + getErpinBat().getX() + ", " + getKontrakoErpina().getY() + "), " + altuera;
     }
     
+    @Override
     public void marraztu(){
-        
+     //(26,24),5)
+        System.out.println(this.toString() + ", kutxa GUI baten marraztua izan da.");;
     }
     
 }

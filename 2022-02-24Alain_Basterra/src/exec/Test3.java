@@ -14,6 +14,5 @@ public class Test3 {
             k1.marraztu();
         } else
            k2.marraztu();
-        
     }
 }
