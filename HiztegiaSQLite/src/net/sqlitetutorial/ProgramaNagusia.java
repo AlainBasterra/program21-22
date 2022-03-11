@@ -33,11 +33,7 @@ public class ProgramaNagusia {
                 System.out.println(ex.getMessage());
             }
         }
-    }
-    
-    
-    
-    
+    }  
     /**
      * @param args the command line arguments
      */ 
