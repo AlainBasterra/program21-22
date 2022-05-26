@@ -18,6 +18,9 @@ public class Terminoa {
         this.euskaraz = euskaraz;
         this.gazteleraz = gazteleraz;
     }
+        public Terminoa() {
+
+    }
 
     public int getId() {
         return id;
