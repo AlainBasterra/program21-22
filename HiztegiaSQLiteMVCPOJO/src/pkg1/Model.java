@@ -148,6 +148,7 @@ public class Model {
                     txertatu ++;
                 }
                 if (txertatu > 0){
+                    System.out.println("Sartutako terminoa existitzen da.");
                     return 0;
                 }
                 
@@ -162,6 +163,7 @@ public class Model {
             try ( Connection conn = konektatu();  PreparedStatement pstmt = conn.prepareStatement(sql1)) {
                 pstmt.setString(1, t.getEuskaraz().toLowerCase());
                 pstmt.setString(2, t.getGazteleraz().toLowerCase());
+                System.out.println("Gehitu da terminoa.");
                 return pstmt.executeUpdate();
 
             } catch (SQLException e) {

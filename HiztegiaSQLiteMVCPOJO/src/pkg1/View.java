@@ -63,6 +63,11 @@ public class View extends javax.swing.JFrame {
 
         jButtonTxertatu.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jButtonTxertatu.setText("TXERTATU");
+        jButtonTxertatu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTxertatuActionPerformed(evt);
+            }
+        });
 
         jButtonIrten.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jButtonIrten.setText("IRTEN");
@@ -162,6 +167,10 @@ public class View extends javax.swing.JFrame {
     private void jButtonIrtenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrtenActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButtonIrtenActionPerformed
+
+    private void jButtonTxertatuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTxertatuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonTxertatuActionPerformed
     
     public static View viewaSortuBistaratu() {
         View v = new View();
