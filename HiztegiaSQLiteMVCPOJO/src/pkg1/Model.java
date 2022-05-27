@@ -218,17 +218,17 @@ public class Model {
 //        Scanner in = new Scanner(System.in);
 //        System.out.print("Termino berria: ");
 //        String strEu = in.nextLine();
-        String strEs = terminoa.split(" ");
+//        String strEs = terminoa.split(" ");
         //String sql = "SELECT id,euskaraz,gazteleraz FROM Terminoak WHERE euskaraz = '"+ strEuskaraz+"'" ;
-        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES('" + eu + "','" + es + "')";
-
-        try ( Connection conn = konektatu();  Statement stmt = conn.createStatement()) {
-            int n = stmt.executeUpdate(sql);
-
-            //     System.out.println(strEuskaraz +" => " +rs.getString("gazteleraz"));
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+//        String sql = "INSERT INTO Terminoak(euskaraz,gazteleraz) VALUES('" + eu + "','" + es + "')";
+//
+//        try ( Connection conn = konektatu();  Statement stmt = conn.createStatement()) {
+//            int n = stmt.executeUpdate(sql);
+//
+//            //     System.out.println(strEuskaraz +" => " +rs.getString("gazteleraz"));
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        }
     }
     
     public ArrayList<Terminoa> terminoakArrayListera(){
@@ -253,11 +253,12 @@ public class Model {
     }
     
     public Terminoa[] terminoakArrayra(){
-        Terminoa[] terminoenArraya;
-        
-            String sql2 = "SELECT COUNT(*) FROM Terminoak";
-        
-                   
+        return null;
+//        Terminoa[] terminoenArraya;
+//        
+//            String sql2 = "SELECT COUNT(*) FROM Terminoak";
+//        
+//                   
 //            try ( Connection conn = konektatu();  PreparedStatement pstmt = conn.prepareStatement(sql2)) {
 //                ResultSet rs    = pstmt.executeQuery();
 //                Terminoa t = new Terminoa();
@@ -269,9 +270,9 @@ public class Model {
 //            } catch (SQLException e) {
 //                System.out.println(e.getMessage());
 //            }
-        
-        
-        return terminoenArraya;
+//        
+//        
+//        return terminoenArraya;
         
     }
 }
