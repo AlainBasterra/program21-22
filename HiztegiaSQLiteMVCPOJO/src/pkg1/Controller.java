@@ -35,7 +35,8 @@ public class Controller implements ActionListener {
                 System.out.println("TXERTATU botoia sakatu duzu");
                 Terminoa t = new Terminoa(0,view.jTextFieldEuskaraz.getText(),view.jTextFieldGazteleraz.getText());
                 model.terminoaGehitu(t);
-        case "INPRIMATU":
+                break;
+            case "INPRIMATU":
                 System.out.println("INPRIMATU botoia sakatu duzu");
                 model.terminoakInprimatu();
         }

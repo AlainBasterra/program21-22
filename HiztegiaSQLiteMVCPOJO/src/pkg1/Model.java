@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Model {
 
@@ -131,7 +132,11 @@ public class Model {
 
     }
     
+   
     
+    public void jokoa(){
+        String sqlSelect
+    }
     
       public int terminoaGehitu(Terminoa t) {
 
@@ -278,3 +283,5 @@ public class Model {
         
     }
 }
+
+
