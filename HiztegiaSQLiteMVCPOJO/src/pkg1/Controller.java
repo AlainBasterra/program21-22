@@ -13,6 +13,7 @@ public class Controller implements ActionListener {
 
     private Model model;
     private View view;
+    private int id;
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -22,8 +23,15 @@ public class Controller implements ActionListener {
 
     private void gehituActionListener(ActionListener listener) {
         //GUIaren konponente guztiei gehitu listenerra
-        view.jButtonTxertatu.addActionListener(listener);
-        view.jButtonInprimatu.addActionListener(listener);
+        //Menuko aukerak, irten-ek ez du behar listenerra
+        view.jButtonGehitu.addActionListener(listener);
+        view.jButtonEzabatu.addActionListener(listener);
+        view.jButtonLista.addActionListener(listener);
+        view.jButtonJokoa.addActionListener(listener);
+        //Gehitu JDialog-eko botoiak
+        view.jButtonHizkiaGehitu.addActionListener(listener);
+        //Ezabatu JDialog-eko botoiak
+        view.jButtonHitzaEzabatu.addActionListener(listener);
     }
 
     @Override
@@ -31,14 +39,24 @@ public class Controller implements ActionListener {
         String actionCommand = e.getActionCommand();
         //listenerrak entzun dezakeen eragiketa bakoitzeko. Konponenteek 'actionCommad' propietatea daukate
         switch (actionCommand) {
-            case "TXERTATU":
-                System.out.println("TXERTATU botoia sakatu duzu");
-                Terminoa t = new Terminoa(0,view.jTextFieldEuskaraz.getText(),view.jTextFieldGazteleraz.getText());
+            case "GEHITU":
+                view.Gehitu.setSize(410, 220);
+                view.Gehitu.setVisible(true);
+                view.Gehitu.setResizable(false);
+                break;
+            case "HITZA GEHITU":
+                Terminoa t = new Terminoa(0,view.jTextFieldHitzaEuskaraz.getText(),view.jTextFieldHitzaGazteleraz.getText());
                 model.terminoaGehitu(t);
                 break;
-            case "INPRIMATU":
-                System.out.println("INPRIMATU botoia sakatu duzu");
-                model.terminoakInprimatu();
+            case "EZABATU":
+                view.Ezabatu.setSize(428, 164);
+                view.Ezabatu.setVisible(true);
+                view.Ezabatu.setResizable(false);
+                break;
+            case "HITZA EZABATU":
+                id = Integer.parseInt(view.jTextFieldHitzaEzabatuID.getText());
+                model.terminoaEzabatu(id);
+             
         }
     }
 }

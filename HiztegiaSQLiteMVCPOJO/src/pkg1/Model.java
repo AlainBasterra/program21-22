@@ -133,11 +133,7 @@ public class Model {
     }
     
    
-    
-    public void jokoa(){
-        String sqlSelect
-    }
-    
+
       public int terminoaGehitu(Terminoa t) {
 
         
@@ -176,15 +172,6 @@ public class Model {
                 return -2;
             }        
     }
-      
-      
-      
-      
-      
-      
-      
-      
-      
 
     public int terminoaGehituObjektuGabe(int id, String euskaraz, String gazteleraz) {
 
