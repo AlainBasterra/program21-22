@@ -15,7 +15,7 @@ import javax.swing.table.AbstractTableModel;
  */
 
 public class TerminoakTableModel extends AbstractTableModel{
-    private final String[] zutabeIzenak = {"ID", "EUSKARAZ", "GAZTELERAZ"};
+    private final String[] hr = {"id", "euskeraz", "gazteleraz"};
     ArrayList<Terminoa> terminoak = new ArrayList<Terminoa>();
     
     public TerminoakTableModel(ArrayList<Terminoa> terminoenArraylista){
@@ -28,12 +28,12 @@ public class TerminoakTableModel extends AbstractTableModel{
     
     @Override
     public String getColumnName(int columnIndex){
-        return zutabeIzenak[columnIndex];
+        return hr[columnIndex];
     }
 
     @Override
     public int getColumnCount() {
-        return zutabeIzenak.length;
+        return hr.length;
     }
 
     @Override
