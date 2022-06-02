@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Model {
@@ -227,7 +228,6 @@ public class Model {
         try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql2)) {
             ResultSet rs = pstmt.executeQuery();
 
-
             while (rs.next()) {
                 Terminoa t = new Terminoa(rs.getInt("id"), rs.getString("euskaraz"), rs.getString("gazteleraz"));
                 terminoenArrayLista.add(t);
@@ -239,29 +239,65 @@ public class Model {
         return terminoenArrayLista;
     }
 
+    public ArrayList<Terminoa> hitzakAukeratu() {
+        //Aurreko metodoa erabili terminoen ArrayLista lortzeko
+        ArrayList<Terminoa> terminoenArrayLista = terminoakArrayListera();
 
+        // jokoarentzako 3 termino behar ditut, orduan 3 termino aukeratuko ditut ausaz
+        Collections.shuffle(terminoenArrayLista); // Array list-eko datuak nahastu, hemen aurkitu dut informazioa --> https://mkyong.com/java/java-how-to-shuffle-an-arraylist/
 
-    public Terminoa[] terminoakArrayra() {
-        return null;
-//        Terminoa[] terminoenArraya;
-//        
-//            String sql2 = "SELECT COUNT(*) FROM Terminoak";
-//        
-//                   
-//            try ( Connection conn = konektatu();  PreparedStatement pstmt = conn.prepareStatement(sql2)) {
-//                ResultSet rs    = pstmt.executeQuery();
-//                Terminoa t = new Terminoa();
-//                
-//                while(rs.next()){
-//                    t = new Terminoa(rs.getInt("id"),rs.getString("euskaraz"),rs.getString("gazteleraz"));
-//                    terminoenArraya.add(t);
-//                }
-//            } catch (SQLException e) {
-//                System.out.println(e.getMessage());
-//            }
-//        
-//        
-//        return terminoenArraya;
+        ArrayList<Terminoa> jokoarentzakoTerminoak = new ArrayList<Terminoa>(); //Arraylist berri bat sortu eta terminoen listako 3 Termino gehitu
+        jokoarentzakoTerminoak.add(terminoenArrayLista.get(0));
+        jokoarentzakoTerminoak.add(terminoenArrayLista.get(1));
+        jokoarentzakoTerminoak.add(terminoenArrayLista.get(2));
 
+        return jokoarentzakoTerminoak;
     }
+
+    public int erantzunZuzena() {//Ausazko zenbaki bat bueltatzen du. 0-tik 2-ra.
+        ArrayList<Integer> zenbakiak = new ArrayList<Integer>();
+        zenbakiak.add(0);
+        zenbakiak.add(1);
+        zenbakiak.add(2);
+
+        Collections.shuffle(zenbakiak); //Lista nahastu
+
+        return zenbakiak.get(0);
+    }
+
+    public String hitzaGazteleraz(ArrayList<Terminoa> terminoak, int zenbakia) {
+        String hitza="";
+        String sql = "SELECT gazteleraz FROM Terminoak where id = ?";
+        
+        int id = (terminoak.get(zenbakia)).getId();
+
+        try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            hitza = rs.getString("gazteleraz");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());   
+        }
+        return hitza;
+    }
+    
+        public String hitzaEuskaraz(ArrayList<Terminoa> terminoak, int zenbakia) {
+        String hitza="";
+        String sql = "SELECT euskaraz FROM Terminoak where id = ?";
+        
+        int id = (terminoak.get(zenbakia)).getId();
+
+        try (Connection conn = konektatu(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            hitza = rs.getString("euskaraz");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());   
+        }
+        return hitza;
+    }
+
+
 }

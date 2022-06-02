@@ -6,6 +6,7 @@ package pkg1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import pkg1.Model;
 import pkg1.View;
 
@@ -13,7 +14,9 @@ public class Controller implements ActionListener {
 
     private Model model;
     private View view;
-    private int id;
+    private int zuzena;// Aldagai hau jokoan erabiltzen dut. Gordetzen du lortutako terminoen listatik (hitzakAukeratu() metodoa erabili ondoren) zein izango den erantzun zuzena.
+    private int okerra1;
+    private int okerra2;
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -32,6 +35,8 @@ public class Controller implements ActionListener {
         view.jButtonHizkiaGehitu.addActionListener(listener);
         //Ezabatu JDialog-eko botoiak
         view.jButtonHitzaEzabatu.addActionListener(listener);
+        //Jokoarentzako botoiak
+        view.jButtonBidali.addActionListener(listener);
     }
 
     @Override
@@ -43,7 +48,7 @@ public class Controller implements ActionListener {
                 view.Gehitu.setSize(410, 220);
                 view.Gehitu.setVisible(true);
                 view.Gehitu.setResizable(false);
-                
+
                 break;
             case "HITZA GEHITU":
                 Terminoa t = new Terminoa(0, view.jTextFieldHitzaEuskaraz.getText(), view.jTextFieldHitzaGazteleraz.getText());
@@ -54,11 +59,10 @@ public class Controller implements ActionListener {
                 view.Ezabatu.setSize(428, 164);
                 view.Ezabatu.setVisible(true);
                 view.Ezabatu.setResizable(false);
-                
+
                 break;
             case "HITZA EZABATU":
-                id = Integer.parseInt(view.jTextFieldHitzaEzabatuID.getText());
-                model.terminoaEzabatu(id);
+                model.terminoaEzabatu(Integer.parseInt(view.jTextFieldHitzaEzabatuID.getText()));
                 view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
                 break;
             case "LISTA":
@@ -66,6 +70,37 @@ public class Controller implements ActionListener {
                 view.Lista.setVisible(true);
                 view.Lista.setResizable(false);
                 view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
+                break;
+            case "JOKOA":
+                view.Jokoa.setSize(460, 360);
+                view.Jokoa.setVisible(true);
+                view.Jokoa.setResizable(false);
+                ArrayList<Terminoa> aukerak = model.hitzakAukeratu();
+                zuzena = model.erantzunZuzena();
+                if (zuzena == 0) {
+                    okerra1 = 1;
+                    okerra2 = 2;
+                } else if (zuzena == 1) {
+                    okerra1 = 0;
+                    okerra2 = 2;
+                } else {
+                    okerra1 = 0;
+                    okerra2 = 1;
+                }
+                view.jLabelHitzaGazteleraz.setText(model.hitzaGazteleraz(aukerak, zuzena));
+                if (zuzena == 0) {
+                    view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                    view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                    view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                } else if (zuzena == 1) {
+                    view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                    view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                    view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                } else {
+                    view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                    view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                    view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                }
 
         }
     }

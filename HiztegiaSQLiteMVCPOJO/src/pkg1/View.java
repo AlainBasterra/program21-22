@@ -39,6 +39,16 @@ public class View extends javax.swing.JFrame {
         jTableTerminoenTabla = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         Jokoa = new javax.swing.JDialog();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabelHitzaGazteleraz = new javax.swing.JLabel();
+        jLabelHitzaEuskaraz1 = new javax.swing.JLabel();
+        jLabelHitzaEuskaraz2 = new javax.swing.JLabel();
+        jLabelHitzaEuskaraz3 = new javax.swing.JLabel();
+        jTextFieldErantzuna = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jButtonBidali = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonGehitu = new javax.swing.JButton();
@@ -211,15 +221,91 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel10.setText("JOKOA");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("zein da hurrengoko itzaren itzulpen zuzena?");
+
+        jLabelHitzaGazteleraz.setText("HITZA GAZTELERAZ");
+
+        jLabelHitzaEuskaraz1.setText("HITZA EUSKARAZ 1");
+
+        jLabelHitzaEuskaraz2.setText("HITZA EUSKARAZ 2");
+
+        jLabelHitzaEuskaraz3.setText("HITZA EUSKARAZ 3");
+
+        jTextFieldErantzuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldErantzunaActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Erantzuna:");
+
+        jButtonBidali.setText("BIDALI");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Behean agertzen diren hitzetatik,");
+
         javax.swing.GroupLayout JokoaLayout = new javax.swing.GroupLayout(Jokoa.getContentPane());
         Jokoa.getContentPane().setLayout(JokoaLayout);
         JokoaLayout.setHorizontalGroup(
             JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(JokoaLayout.createSequentialGroup()
+                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(JokoaLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JokoaLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonBidali))
+                            .addGroup(JokoaLayout.createSequentialGroup()
+                                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelHitzaEuskaraz2)
+                                    .addComponent(jLabelHitzaEuskaraz1)
+                                    .addComponent(jLabelHitzaEuskaraz3))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JokoaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(JokoaLayout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(jLabel10))
+                            .addGroup(JokoaLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jTextFieldErantzuna, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelHitzaGazteleraz))))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         JokoaLayout.setVerticalGroup(
             JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(JokoaLayout.createSequentialGroup()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabelHitzaGazteleraz))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelHitzaEuskaraz1)
+                .addGap(30, 30, 30)
+                .addComponent(jLabelHitzaEuskaraz2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelHitzaEuskaraz3)
+                    .addGroup(JokoaLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldErantzuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addComponent(jButtonBidali)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         setResizable(false);
@@ -351,6 +437,10 @@ public class View extends javax.swing.JFrame {
     private void jTextFieldHitzaEzabatuIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHitzaEzabatuIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldHitzaEzabatuIDActionPerformed
+
+    private void jTextFieldErantzunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldErantzunaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldErantzunaActionPerformed
     
     public static View viewaSortuBistaratu() {
         View v = new View();
@@ -402,8 +492,9 @@ public class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDialog Ezabatu;
     public javax.swing.JDialog Gehitu;
-    private javax.swing.JDialog Jokoa;
+    public javax.swing.JDialog Jokoa;
     public javax.swing.JDialog Lista;
+    public javax.swing.JButton jButtonBidali;
     javax.swing.JButton jButtonEzabatu;
     javax.swing.JButton jButtonGehitu;
     public javax.swing.JButton jButtonHitzaEzabatu;
@@ -411,16 +502,25 @@ public class View extends javax.swing.JFrame {
     javax.swing.JButton jButtonJokoa;
     javax.swing.JButton jButtonLista;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelHitzaEuskaraz1;
+    public javax.swing.JLabel jLabelHitzaEuskaraz2;
+    public javax.swing.JLabel jLabelHitzaEuskaraz3;
+    public javax.swing.JLabel jLabelHitzaGazteleraz;
     private javax.swing.JLabel jLabelMezua;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableTerminoenTabla;
+    public javax.swing.JTextField jTextFieldErantzuna;
     public javax.swing.JTextField jTextFieldHitzaEuskaraz;
     public javax.swing.JTextField jTextFieldHitzaEzabatuID;
     public javax.swing.JTextField jTextFieldHitzaGazteleraz;
