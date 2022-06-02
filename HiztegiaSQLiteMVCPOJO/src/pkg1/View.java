@@ -49,6 +49,13 @@ public class View extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jButtonBidali = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabelBizitzak = new javax.swing.JLabel();
+        jLabelPuntuazioa = new javax.swing.JLabel();
+        Puntuazioa = new javax.swing.JDialog();
+        jLabel13 = new javax.swing.JLabel();
+        jLabelAmaierakoPuntuazioa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButtonGehitu = new javax.swing.JButton();
@@ -248,6 +255,14 @@ public class View extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Behean agertzen diren hitzetatik,");
 
+        jLabel3.setText("Bizitzak: ");
+
+        jLabel12.setText("Puntuazioa:");
+
+        jLabelBizitzak.setText("0");
+
+        jLabelPuntuazioa.setText("0");
+
         javax.swing.GroupLayout JokoaLayout = new javax.swing.GroupLayout(Jokoa.getContentPane());
         Jokoa.getContentPane().setLayout(JokoaLayout);
         JokoaLayout.setHorizontalGroup(
@@ -272,7 +287,17 @@ public class View extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addGroup(JokoaLayout.createSequentialGroup()
                                 .addGap(177, 177, 177)
-                                .addComponent(jLabel10))
+                                .addComponent(jLabel10)
+                                .addGap(68, 68, 68)
+                                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JokoaLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelBizitzak))
+                                    .addGroup(JokoaLayout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelPuntuazioa))))
                             .addGroup(JokoaLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
@@ -280,12 +305,22 @@ public class View extends javax.swing.JFrame {
                                     .addComponent(jLabel14)
                                     .addComponent(jTextFieldErantzuna, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelHitzaGazteleraz))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JokoaLayout.setVerticalGroup(
             JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JokoaLayout.createSequentialGroup()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(JokoaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabelBizitzak))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(JokoaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabelPuntuazioa))))
                 .addGap(13, 13, 13)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -306,6 +341,33 @@ public class View extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jButtonBidali)
                 .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel13.setText("Zure puntuazioa:");
+
+        jLabelAmaierakoPuntuazioa.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabelAmaierakoPuntuazioa.setText("00");
+
+        javax.swing.GroupLayout PuntuazioaLayout = new javax.swing.GroupLayout(Puntuazioa.getContentPane());
+        Puntuazioa.getContentPane().setLayout(PuntuazioaLayout);
+        PuntuazioaLayout.setHorizontalGroup(
+            PuntuazioaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PuntuazioaLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelAmaierakoPuntuazioa)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        PuntuazioaLayout.setVerticalGroup(
+            PuntuazioaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PuntuazioaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(PuntuazioaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabelAmaierakoPuntuazioa))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         setResizable(false);
@@ -494,6 +556,7 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JDialog Gehitu;
     public javax.swing.JDialog Jokoa;
     public javax.swing.JDialog Lista;
+    public javax.swing.JDialog Puntuazioa;
     public javax.swing.JButton jButtonBidali;
     javax.swing.JButton jButtonEzabatu;
     javax.swing.JButton jButtonGehitu;
@@ -504,19 +567,25 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelAmaierakoPuntuazioa;
+    public javax.swing.JLabel jLabelBizitzak;
     public javax.swing.JLabel jLabelHitzaEuskaraz1;
     public javax.swing.JLabel jLabelHitzaEuskaraz2;
     public javax.swing.JLabel jLabelHitzaEuskaraz3;
     public javax.swing.JLabel jLabelHitzaGazteleraz;
     private javax.swing.JLabel jLabelMezua;
+    public javax.swing.JLabel jLabelPuntuazioa;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableTerminoenTabla;

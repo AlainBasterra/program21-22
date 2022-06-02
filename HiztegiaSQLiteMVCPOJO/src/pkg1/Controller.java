@@ -14,9 +14,12 @@ public class Controller implements ActionListener {
 
     private Model model;
     private View view;
+    private ArrayList<Terminoa> aukerak;
     private int zuzena;// Aldagai hau jokoan erabiltzen dut. Gordetzen du lortutako terminoen listatik (hitzakAukeratu() metodoa erabili ondoren) zein izango den erantzun zuzena.
     private int okerra1;
     private int okerra2;
+    private int bizitzak;
+    private int puntuazioa;
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -75,7 +78,12 @@ public class Controller implements ActionListener {
                 view.Jokoa.setSize(460, 360);
                 view.Jokoa.setVisible(true);
                 view.Jokoa.setResizable(false);
-                ArrayList<Terminoa> aukerak = model.hitzakAukeratu();
+                view.jTextFieldErantzuna.setText("");
+                bizitzak = 3;
+                puntuazioa = 0;
+                view.jLabelBizitzak.setText(String.valueOf(bizitzak));
+                view.jLabelPuntuazioa.setText(String.valueOf(puntuazioa));
+                aukerak = model.hitzakAukeratu();
                 zuzena = model.erantzunZuzena();
                 if (zuzena == 0) {
                     okerra1 = 1;
@@ -101,7 +109,114 @@ public class Controller implements ActionListener {
                     view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra2));
                     view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, zuzena));
                 }
+                break;
+            case "BIDALI":
+                if (view.jTextFieldErantzuna.getText().equals("")){
+                    System.out.println("Erantzuna hutsik dago!");
+                    break;
+                }
+                if (model.konprobatu(aukerak, zuzena, view.jTextFieldErantzuna.getText())) {
+                    puntuazioa++;
+                    view.jLabelBizitzak.setText(String.valueOf(bizitzak));
+                    view.jLabelPuntuazioa.setText(String.valueOf(puntuazioa));
+                    view.jTextFieldErantzuna.setText("");
+                    aukerak = model.hitzakAukeratu();
+                    zuzena = model.erantzunZuzena();
+                    if (zuzena == 0) {
+                        okerra1 = 1;
+                        okerra2 = 2;
+                    } else if (zuzena == 1) {
+                        okerra1 = 0;
+                        okerra2 = 2;
+                    } else {
+                        okerra1 = 0;
+                        okerra2 = 1;
+                    }
+                    view.jLabelHitzaGazteleraz.setText(model.hitzaGazteleraz(aukerak, zuzena));
+                    if (zuzena == 0) {
+                        view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                        view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                        view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                    } else if (zuzena == 1) {
+                        view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                        view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                        view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                    } else {
+                        view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                        view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                        view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                    }
+                } else {
+                    bizitzak--;
+                    if (bizitzak == 0) { // Jokoa galtzen denean egin behar duena
+                        view.Puntuazioa.setSize(201, 100);
+                        view.Puntuazioa.setVisible(true);
+                        view.Puntuazioa.setResizable(false);
+                        view.jLabelAmaierakoPuntuazioa.setText(String.valueOf(puntuazioa));
+                        bizitzak = 3;
+                        puntuazioa = 0;
+                        view.jLabelBizitzak.setText(String.valueOf(bizitzak));
+                        view.jLabelPuntuazioa.setText(String.valueOf(puntuazioa));
+                        view.jTextFieldErantzuna.setText("");
+                        aukerak = model.hitzakAukeratu();
+                        zuzena = model.erantzunZuzena();
+                        if (zuzena == 0) {
+                            okerra1 = 1;
+                            okerra2 = 2;
+                        } else if (zuzena == 1) {
+                            okerra1 = 0;
+                            okerra2 = 2;
+                        } else {
+                            okerra1 = 0;
+                            okerra2 = 1;
+                        }
+                        view.jLabelHitzaGazteleraz.setText(model.hitzaGazteleraz(aukerak, zuzena));
+                        if (zuzena == 0) {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                        } else if (zuzena == 1) {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                        } else {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                        }
+                    } else {
 
+                        view.jLabelBizitzak.setText(String.valueOf(bizitzak));
+                        view.jLabelPuntuazioa.setText(String.valueOf(puntuazioa));
+                        view.jTextFieldErantzuna.setText("");
+                        aukerak = model.hitzakAukeratu();
+                        zuzena = model.erantzunZuzena();
+                        if (zuzena == 0) {
+                            okerra1 = 1;
+                            okerra2 = 2;
+                        } else if (zuzena == 1) {
+                            okerra1 = 0;
+                            okerra2 = 2;
+                        } else {
+                            okerra1 = 0;
+                            okerra2 = 1;
+                        }
+                        view.jLabelHitzaGazteleraz.setText(model.hitzaGazteleraz(aukerak, zuzena));
+                        if (zuzena == 0) {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                        } else if (zuzena == 1) {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                        } else {
+                            view.jLabelHitzaEuskaraz1.setText(model.hitzaEuskaraz(aukerak, okerra1));
+                            view.jLabelHitzaEuskaraz2.setText(model.hitzaEuskaraz(aukerak, okerra2));
+                            view.jLabelHitzaEuskaraz3.setText(model.hitzaEuskaraz(aukerak, zuzena));
+                        }
+                    }
+                }
         }
     }
 }
