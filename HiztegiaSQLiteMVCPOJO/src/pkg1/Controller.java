@@ -43,20 +43,30 @@ public class Controller implements ActionListener {
                 view.Gehitu.setSize(410, 220);
                 view.Gehitu.setVisible(true);
                 view.Gehitu.setResizable(false);
+                
                 break;
             case "HITZA GEHITU":
-                Terminoa t = new Terminoa(0,view.jTextFieldHitzaEuskaraz.getText(),view.jTextFieldHitzaGazteleraz.getText());
+                Terminoa t = new Terminoa(0, view.jTextFieldHitzaEuskaraz.getText(), view.jTextFieldHitzaGazteleraz.getText());
                 model.terminoaGehitu(t);
+                view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
                 break;
             case "EZABATU":
                 view.Ezabatu.setSize(428, 164);
                 view.Ezabatu.setVisible(true);
                 view.Ezabatu.setResizable(false);
+                
                 break;
             case "HITZA EZABATU":
                 id = Integer.parseInt(view.jTextFieldHitzaEzabatuID.getText());
                 model.terminoaEzabatu(id);
-             
+                view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
+                break;
+            case "LISTA":
+                view.Lista.setSize(371, 550);
+                view.Lista.setVisible(true);
+                view.Lista.setResizable(false);
+                view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
+
         }
     }
 }

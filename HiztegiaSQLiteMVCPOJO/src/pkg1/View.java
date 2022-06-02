@@ -35,6 +35,9 @@ public class View extends javax.swing.JFrame {
         jTextFieldHitzaEzabatuID = new javax.swing.JTextField();
         jButtonHitzaEzabatu = new javax.swing.JButton();
         Lista = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableTerminoenTabla = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
         Jokoa = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -163,15 +166,49 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
+        jTableTerminoenTabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Euskaraz", "Gazteleraz"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableTerminoenTabla);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel9.setText("TERMINOEN LISTA");
+
         javax.swing.GroupLayout ListaLayout = new javax.swing.GroupLayout(Lista.getContentPane());
         Lista.getContentPane().setLayout(ListaLayout);
         ListaLayout.setHorizontalGroup(
             ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(ListaLayout.createSequentialGroup()
+                .addGroup(ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListaLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ListaLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel9)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         ListaLayout.setVerticalGroup(
             ListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(ListaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JokoaLayout = new javax.swing.GroupLayout(Jokoa.getContentPane());
@@ -366,7 +403,7 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JDialog Ezabatu;
     public javax.swing.JDialog Gehitu;
     private javax.swing.JDialog Jokoa;
-    private javax.swing.JDialog Lista;
+    public javax.swing.JDialog Lista;
     javax.swing.JButton jButtonEzabatu;
     javax.swing.JButton jButtonGehitu;
     public javax.swing.JButton jButtonHitzaEzabatu;
@@ -379,8 +416,11 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelMezua;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jTableTerminoenTabla;
     public javax.swing.JTextField jTextFieldHitzaEuskaraz;
     public javax.swing.JTextField jTextFieldHitzaEzabatuID;
     public javax.swing.JTextField jTextFieldHitzaGazteleraz;
