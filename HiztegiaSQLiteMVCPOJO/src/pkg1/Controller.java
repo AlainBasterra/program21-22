@@ -57,6 +57,8 @@ public class Controller implements ActionListener {
                 Terminoa t = new Terminoa(0, view.jTextFieldHitzaEuskaraz.getText(), view.jTextFieldHitzaGazteleraz.getText());
                 model.terminoaGehitu(t);
                 view.jTableTerminoenTabla.setModel(new TerminoakTableModel(model.terminoakArrayListera()));
+                view.jTextFieldHitzaEuskaraz.setText("");
+                view.jTextFieldHitzaGazteleraz.setText("");
                 break;
             case "EZABATU":
                 view.Ezabatu.setSize(428, 164);
